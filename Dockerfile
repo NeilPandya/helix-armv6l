@@ -1,6 +1,6 @@
 FROM rust:slim-bookworm
 
-LABEL org.opencontainers.image.source=https://github.com/neilpandya/helix-armv6l.git
+LABEL maintainer="neil@neilpandya.com"
 
 # Set arguments for dynamic UID, GID, and username
 ARG USERNAME
@@ -36,5 +36,3 @@ RUN groupadd -g $GID $USERNAME && \
     useradd -u $UID -g $GID -s /bin/bash $USERNAME
 
 ENTRYPOINT ["bash"]
-
-

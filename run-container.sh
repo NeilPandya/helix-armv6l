@@ -9,4 +9,4 @@ docker run \
     --user $(id -u):$(id -g) \
     -v "$PWD"/:/helix-armv6l \
     -w /helix-armv6l \
-    neilpandya/rust:debian-bookworm-slim-crosscompile-armv6l
+    neilpandya/rust:slim-bookworm-crosscompile-armv6l

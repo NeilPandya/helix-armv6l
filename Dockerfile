@@ -1,6 +1,10 @@
 FROM rust:slim-bookworm
 
 LABEL maintainer="neil@neilpandya.com"
+LABEL org.opencontainers.image.source="https://hub.docker.com/repository/docker/neilpandya/rust"
+LABEL description="This image is meant for cross-compilation \
+    from an `amd64` base image/host to an `armv6l` target."
+LABEL version="1.82.0"
 
 # Set arguments for dynamic UID, GID, and username
 ARG USERNAME
@@ -25,6 +29,7 @@ RUN apt-get update && \
 
 # Install cross for cross-compilation and set up the ARM target
 RUN cargo install cross && \
+    rustup target add arm-unknown-linux-gnueabi && \
     echo "Installed Target(s):" && \
     rustup target list --installed
 

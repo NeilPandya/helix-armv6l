@@ -86,11 +86,11 @@ hx ./run-container.sh
 ```bash
 # Once inside the container, build Helix
 ./build-helix-armv6l.sh
+
+# Once Helix is built, you can exit the container.
+exit
 ```
 ```bash
-# Once Helix is built, you can exit the container and copy the binary to your device.
-exit
-
 # Copy the binary to your device
 scp target/arm-unknown-linux-gnueabi/release/hx <your-username>@<your-device-ip>:/home/<your-username>/hx
 

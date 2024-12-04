@@ -92,16 +92,16 @@ hx ./run-container.sh
 exit
 
 # Copy the binary to your device
-scp ./target/arm-unknown-linux-gnueabi/release/hx <your-username>@<your-device-ip>:/home/<your-username>/hx
+scp target/arm-unknown-linux-gnueabi/release/hx <your-username>@<your-device-ip>:/home/<your-username>/hx
 
 # SSH into your device
 ssh <your-username>@<your-device-ip>
 
 # Change permissions and ownership of the binary
-chmod 755 -v./hx && chown root:root ./hx
+sudo chmod 755 -v hx && sudo chown root:root hx
 
 # Move the binary to /usr/local/bin
-sudo mv -v ./hx /usr/local/bin/hx
+sudo mv -v hx /usr/local/bin/hx
 ```
 
 # Contributing

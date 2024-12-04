@@ -24,14 +24,21 @@ RUN apt-get update && \
     libstdc++-12-dev-armel-cross \
     libssl-dev \
     zlib1g-dev \
+    build-essential \
+    cmake \
     ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
 # Install cross for cross-compilation and set up the ARM target
-RUN cargo install cross && \
-    rustup target add arm-unknown-linux-gnueabi && \
+RUN rustup target add arm-unknown-linux-gnueabi && \
     echo "Installed Target(s):" && \
     rustup target list --installed
+
+# Set environment variables for cross-compilation
+ENV CC_arm_unknown_linux_gnueabi=arm-linux-gnueabi-gcc
+ENV CXX_arm_unknown_linux_gnueabi=arm-linux-gnueabi-g++
+ENV AR_arm_unknown_linux_gnueabi=arm-linux-gnueabi-ar
+ENV CARGO_TARGET_ARM_UNKNOWN_LINUX_GNUEABI_LINKER=arm-linux-gnueabi-gcc
 
 # Set permissions for cargo
 RUN chmod -v -R 777 /usr/local/cargo

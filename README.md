@@ -98,7 +98,7 @@ scp target/arm-unknown-linux-gnueabi/release/hx <your-username>@<your-device-ip>
 ssh <your-username>@<your-device-ip>
 
 # Change permissions and ownership of the binary
-sudo chmod 755 -v hx && sudo chown root:root hx
+sudo chmod 755 -v hx && sudo chown -v root:root hx
 
 # Move the binary to /usr/local/bin
 sudo mv -v hx /usr/local/bin/hx

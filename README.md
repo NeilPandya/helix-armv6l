@@ -55,7 +55,7 @@ This fork is my (@NeilPandya) attempt to get Helix working on my Raspberry Pi Ze
 
 ## Building for 32-bit ARM
 
-I'm using a Raspberry Pi Zero Wireless, which is a 32-bit `ARMv6l` device. I'm not sure if this will work on other devices; this is fork is solely meant for Raspberry Pi Zero Wireless devices.
+I'm using a legacy Raspberry Pi Zero Wireless, which is a 32-bit `armv6l` device. I'm not sure if this will work on other devices; this fork is solely meant for legacy Raspberry Pi Zero Wireless devices or any that use an `armv6l` CPU.
 
 ### Prerequisites
 
@@ -102,6 +102,9 @@ sudo chmod 755 -v hx && sudo chown root:root hx
 
 # Move the binary to /usr/local/bin
 sudo mv -v hx /usr/local/bin/hx
+
+# Try out helix editor
+hx ~/.bashrc
 ```
 
 # Contributing

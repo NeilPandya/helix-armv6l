@@ -15,12 +15,13 @@
 [target.arm-unknown-linux-gnueabi]
 linker = "arm-linux-gnueabi-gcc"
 rustflags = [
-    "--cfg", "tokio_unstable",
-    "-C", "target-feature=+crt-static",
-    "-C", "link-arg=-static"
+    "--cfg",
+    "tokio_unstable",
+    "-C",
+    "target-feature=+crt-static",
+    "-C",
+    "link-arg=-static",
     ]
-
 [alias]
 xtask = "run --package xtask --"
 integration-test = "test --features integration --profile integration --workspace --test integration"
-
